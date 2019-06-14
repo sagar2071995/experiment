@@ -11,9 +11,8 @@ public list: any;
   constructor(private dataservice: DataService) { }
 
   ngOnInit() {
-    console.log('hi');
     this.list = this.dataservice.get();
-    console.log(this.list);
+   // console.log(this.list);
   }
 
 }

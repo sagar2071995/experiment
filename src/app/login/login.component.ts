@@ -6,14 +6,23 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+ name: any;
+ password: any;
   constructor(private router: Router) { }
-  get() {
-    this.router.navigate(['/home']);
+  validate(uname,pass) {
+    if(this.name == uname.value && this.password == pass.value){
+      this.router.navigate(['/home']);  
+    }
+    else{
+      alert('Enter correct credential..!!')
+      uname.value=''
+      pass.value=''
+    }
+    
   }
 
   ngOnInit() {
-    this.get();
-  }
-
+    this.name = localStorage.getItem('name');
+    this.password = localStorage.getItem('pass');
+    }
 }
