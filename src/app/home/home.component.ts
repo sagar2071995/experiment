@@ -8,11 +8,16 @@ import { DataService } from './../data.service';
 })
 export class HomeComponent implements OnInit {
 public list: any;
+temp : any;
   constructor(private dataservice: DataService) { }
 
   ngOnInit() {
     this.list = this.dataservice.get();
-   // console.log(this.list);
-  }
+   this.dataservice.getData().
+    subscribe(data =>
+       this.temp = data);
+     console.log(this.temp);
+   
+}
 
 }
