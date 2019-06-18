@@ -13,10 +13,10 @@ temp : any;
 
   ngOnInit() {
     this.list = this.dataservice.get();
-   this.dataservice.getData().
-    subscribe(data =>
-       this.temp = data);
-     console.log(this.temp);
+  //  this.dataservice.getData().
+  //   subscribe(data =>
+  //      this.temp = data);
+  //    console.log(this.temp);
    
 }
 
