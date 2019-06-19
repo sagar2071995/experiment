@@ -12,7 +12,10 @@ temp : any;
   constructor(private dataservice: DataService) { }
 
   ngOnInit() {
-    this.list = this.dataservice.get();
+    this.dataservice.getData().subscribe((res) => {
+      this.list = res
+      console.log(this.list)
+    });
   //  this.dataservice.getData().
   //   subscribe(data =>
   //      this.temp = data);
