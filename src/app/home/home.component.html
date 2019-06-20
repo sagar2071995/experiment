@@ -1,16 +1,22 @@
 <app-side-nav-bar></app-side-nav-bar>
- <h2> we are on home page.</h2>
+
  <h1>EMPLOYEE DETAILS</h1>
-<table border="1">
- <div *ngFor="let item of list">
-   <tr>
-      <td><h3>{{item.name}}</h3></td>
-      <td><h3>{{item.position}}</h3></td>
-      <td><h3>{{item.office}}</h3></td>
-      <td><h3>{{item.salary}}</h3></td>
+ <table matSort *ngIf='list'>
+  <tr>
+    <th mat-sort-header="name">NAME</th>
+    <th mat-sort-header="position">POSITION</th>
+    <th mat-sort-header="office">OFFICE</th>
+    <th mat-sort-header="salary">SALARY</th>
+    
   </tr>
- </div>
- </table>
+
+  <tr *ngFor="let dessert of list.employees">
+    <td>{{dessert.name}}</td>
+    <td>{{dessert.position}}</td>
+    <td>{{dessert.office}}</td>
+    <td>{{dessert.salary}}</td>
+  </tr>
+</table>
  <!----mat-checkbox>subscribe</mat-checkbox>
 <br>
  <mat-radio-group aria-label="Select an option">

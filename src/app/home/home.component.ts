@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from './../data.service';
+import { Employee } from '../shared/employee.model';
 
 @Component({
   selector: 'app-home',
@@ -9,6 +10,7 @@ import { DataService } from './../data.service';
 export class HomeComponent implements OnInit {
 public list: any;
 temp : any;
+employees : Employee[]
   constructor(private dataservice: DataService) { }
 
   ngOnInit() {
