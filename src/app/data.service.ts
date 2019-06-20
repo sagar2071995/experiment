@@ -8,11 +8,20 @@ export class DataService {
   public friends = [ 'sagar' , 'raj', 'sachin' , 'rahul', 'sushil'];
   constructor(private _http:HttpClient) { }
   apiUrl="http://localhost:3000/employees"
+  userApi="http://localhost:3000/users/login"
   employee : Employee[]
   get() {
     return this.friends;
   }
   getData(){
     return this._http.get<Employee[]>(this.apiUrl);
+    
+  }
+  checkUser(uname,pswd){
+    var data={
+      username:uname,
+      password:pswd
+    }
+    return this._http.post(this.userApi,{data:data})
   }
 }

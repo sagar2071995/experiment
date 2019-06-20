@@ -1,13 +1,13 @@
 <app-side-nav-bar></app-side-nav-bar>
 
- <h1>EMPLOYEE DETAILS</h1>
- <table matSort *ngIf='list'>
+<h1>EMPLOYEE DETAILS</h1>
+<table matSort *ngIf='list'>
   <tr>
     <th mat-sort-header="name">NAME</th>
     <th mat-sort-header="position">POSITION</th>
     <th mat-sort-header="office">OFFICE</th>
     <th mat-sort-header="salary">SALARY</th>
-    
+
   </tr>
 
   <tr *ngFor="let dessert of list.employees">
@@ -17,12 +17,11 @@
     <td>{{dessert.salary}}</td>
   </tr>
 </table>
- <!----mat-checkbox>subscribe</mat-checkbox>
+<!----mat-checkbox>subscribe</mat-checkbox>
 <br>
  <mat-radio-group aria-label="Select an option">
   <mat-radio-button value="1">Option 1</mat-radio-button>
   <mat-radio-button value="2">Option 2</mat-radio-button>
 </mat-radio-group--->
- 
 
-
+<input type="button" value='logout' (click)='logout()'>
